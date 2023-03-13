@@ -1,0 +1,10 @@
+---
+#Task file for teleport role
+- name: Add Teleport APT key
+  apt_key:
+    url: https://apt.releases.teleport.dev/gpg
+    state: present
+    keyring: /usr/share/keyrings/teleport-archive-keyring.asc
+
+- name: Source /etc/os-release
+  shell: source /etc/os-release
